@@ -1,4 +1,4 @@
-import prisma from '@/lib/database'
+import prisma from '../../../lib/database'
 import { LoadingProductCard, ProductCard } from './ProductCard'
 import { Suspense } from 'react'
 import { unstable_noStore as noStore } from 'next/cache'

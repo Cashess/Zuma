@@ -1,5 +1,9 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '../../../components/ui/avatar'
+import { Button } from '../../../components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,13 +11,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+} from '@/components/ui/dropdown-menu'
+import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs/components'
 
 interface iAppProps {
-  email: string;
-  name: string;
-  userImage: string;
+  email: string
+  name: string
+  userImage: string
 }
 
 export function UserDropdown({ email, name, userImage }: iAppProps) {
@@ -38,5 +42,5 @@ export function UserDropdown({ email, name, userImage }: iAppProps) {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

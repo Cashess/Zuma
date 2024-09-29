@@ -3,15 +3,15 @@ import { NavbarLinks } from './NavbarLinks'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import { ShoppingBagIcon } from 'lucide-react'
 import { UserDropdown } from './UserDropdown'
-import { Button } from '@/components/ui/button'
+import { Button } from '../../../components/ui/button'
 import {
   LoginLink,
   RegisterLink,
 } from '@kinde-oss/kinde-auth-nextjs/components'
-import { redis } from '@/lib/redis'
-import { Cart } from '@/lib/interface'
+import { redis } from '../../../lib/redis'
+import { Cart } from '../../../lib/interface'
 import Image from 'next/image'
-import zuma from '@/app/asset/zuma.png'
+import zuma from '../../asset/zuma.png'
 
 export async function Navbar() {
   const { getUser } = getKindeServerSession()

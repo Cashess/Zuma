@@ -1,11 +1,11 @@
-import prisma from '@/lib/database'
+import prisma from '../../../lib/database'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel'
+} from '../../../components/ui/carousel'
 import Image from 'next/image'
 
 async function getData() {

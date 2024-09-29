@@ -1,32 +1,32 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
+import { Button } from '../../../components/ui/button'
+import { cn } from '../../../lib/utils'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
+import { useState } from 'react'
 
 interface iAppProps {
-  images: string[];
+  images: string[]
 }
 
 export function ImageSlider({ images }: iAppProps) {
-  const [mainImageIndex, setMainImageIndex] = useState(0);
+  const [mainImageIndex, setMainImageIndex] = useState(0)
 
   function handlePreviousClick() {
     setMainImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    )
   }
 
   function handleNextClick() {
     setMainImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    )
   }
 
   function handleImageClick(index: number) {
-    setMainImageIndex(index);
+    setMainImageIndex(index)
   }
 
   return (
@@ -55,9 +55,9 @@ export function ImageSlider({ images }: iAppProps) {
           <div
             className={cn(
               index === mainImageIndex
-                ? "border-2 border-primary"
-                : "border border-gray-200",
-              "relative overflow-hidden rounded-lg cursor-pointer"
+                ? 'border-2 border-primary'
+                : 'border border-gray-200',
+              'relative overflow-hidden rounded-lg cursor-pointer'
             )}
             key={index}
             onClick={() => handleImageClick(index)}
@@ -73,5 +73,5 @@ export function ImageSlider({ images }: iAppProps) {
         ))}
       </div>
     </div>
-  );
+  )
 }

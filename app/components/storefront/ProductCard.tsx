@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '../../../components/ui/button'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel'
-import { Skeleton } from '@/components/ui/skeleton'
+} from '../../../components/ui/carousel'
+import { Skeleton } from '../../../components/ui/skeleton'
 import Image from 'next/image'
 import Link from 'next/link'
 

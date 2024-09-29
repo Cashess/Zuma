@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import electronics from '@/app/asset/electronics.png'
-import homeMadeCraft from '@/app/asset/homeMadeCraft.png'
-import kitchen from '@/app/asset/kitchen.png'
+import electronics from '../../asset/electronics.png'
+import homeMadeCraft from '../../asset/homeMadeCraft.png'
+import kitchen from '../../asset/kitchen.png'
 
 export function CategoriesSelection() {
   return (

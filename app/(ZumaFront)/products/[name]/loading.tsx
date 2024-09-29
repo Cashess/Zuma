@@ -1,5 +1,5 @@
-import { LoadingProductCard } from "@/app/components/storefront/ProductCard";
-import { Skeleton } from "@/components/ui/skeleton";
+import { LoadingProductCard } from '../../../components/storefront/ProductCard'
+import { Skeleton } from '../../../../components/ui/skeleton'
 
 export default function LoadingFile() {
   return (
@@ -19,5 +19,5 @@ export default function LoadingFile() {
         <LoadingProductCard />
       </div>
     </div>
-  );
+  )
 }

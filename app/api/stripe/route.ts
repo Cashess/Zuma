@@ -1,6 +1,6 @@
-import { stripe } from '@/lib/stripe' // Ensure this is the correct path for your stripe instance
-import prisma from '@/lib/database' // Ensure correct prisma import
-import { redis } from '@/lib/redis' // Ensure correct redis import
+import { stripe } from '../../../lib/stripe' // Ensure this is the correct path for your stripe instance
+import prisma from '../../../lib/database' // Ensure correct prisma import
+import { redis } from '../../../lib/redis' // Ensure correct redis import
 import Stripe from 'stripe'
 
 export async function POST(req: Request) {

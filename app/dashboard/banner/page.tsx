@@ -1,4 +1,4 @@
-import prisma from '@/lib/database'
+import prisma from '../../../lib/database'
 import { Button } from '@/components/ui/button'
 import {
   Card,

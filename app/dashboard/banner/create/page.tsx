@@ -1,10 +1,10 @@
 'use client'
 
-import { createBanner } from '@/app/actions'
-import { SubmitButton } from '@/app/components/SubmitButton'
-import { UploadDropzone } from '@/lib/uploadthing'
-import { bannerSchema } from '@/lib/validations'
-import { Button } from '@/components/ui/button'
+import { createBanner } from '../../../actions'
+import { SubmitButton } from '../../../components/SubmitButton'
+import { UploadDropzone } from '../../../../lib/uploadthing'
+import { bannerSchema } from '../../../../lib/validations'
+import { Button } from '../../../../components/ui/button'
 import {
   Card,
   CardContent,

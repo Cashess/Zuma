@@ -28,10 +28,10 @@ import { UploadDropzone } from '../../../lib/uploadthing'
 import { categories } from '../../../lib/categories'
 import { useState } from 'react'
 import { useFormState } from 'react-dom'
-import { editProduct } from '@/app/actions'
+import { editProduct } from '../../actions'
 import { useForm } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
-import { productSchema } from '@/lib/validations'
+import { productSchema } from '../../../lib/validations'
 import { type $Enums } from '@prisma/client'
 
 interface iAppProps {

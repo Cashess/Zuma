@@ -1,6 +1,6 @@
-import { deleteBanner } from '@/app/actions'
-import { SubmitButton } from '@/app/components/SubmitButton'
-import { Button } from '@/components/ui/button'
+import { deleteBanner } from '../../../../actions'
+import { SubmitButton } from '../../../../components/SubmitButton'
+import { Button } from '../../../../../components/ui/button'
 import {
   Card,
   CardDescription,

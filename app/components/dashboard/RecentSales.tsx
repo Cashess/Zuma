@@ -1,4 +1,4 @@
-import prisma from '@/lib/database'
+import prisma from '../../../lib/database'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 

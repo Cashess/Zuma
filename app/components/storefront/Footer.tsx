@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import zuma from '@/app/asset/zuma.png'
+import zuma from '../../asset/zuma.png'
 
 export function Footer() {
   return (

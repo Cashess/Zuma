@@ -1,13 +1,13 @@
-import { deleteProduct } from '@/app/actions'
-import { SubmitButton } from '@/app/components/SubmitButton'
-import { Button } from '@/components/ui/button'
+import { deleteProduct } from '../../../../actions'
+import { SubmitButton } from '../../../../components/SubmitButton'
+import { Button } from '../../../../../components/ui/button'
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '../../../../../components/ui/card'
 import Link from 'next/link'
 
 export default function DeleteRoute({ params }: { params: { id: string } }) {

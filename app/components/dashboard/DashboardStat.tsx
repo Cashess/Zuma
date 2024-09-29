@@ -1,5 +1,10 @@
-import prisma from '@/lib/database'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import prisma from '../../../lib/database'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../../../components/ui/card'
 import { DollarSign, PartyPopper, ShoppingBag, User2 } from 'lucide-react'
 
 async function getData() {

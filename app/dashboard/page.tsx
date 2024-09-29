@@ -8,7 +8,7 @@ import {
 import { DashboardStats } from '../components/dashboard/DashboardStat'
 import { RecentSales } from '../components/dashboard/RecentSales'
 import { Chart } from '../components/dashboard/Charts'
-import prisma from '@/lib/database'
+import prisma from '../../lib/database'
 import { unstable_noStore as noStore } from 'next/cache'
 
 async function getData() {

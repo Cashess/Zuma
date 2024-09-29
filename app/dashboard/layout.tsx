@@ -13,11 +13,6 @@ import '../globals.css'
 //   weight: "100 900",
 // });
 
-export const metadata: Metadata = {
-  title: 'Zuma-Shop',
-  description: 'Get Your modern age Shop',
-}
-
 import { ReactNode } from 'react'
 import { DashNavigation } from '../components/dashboard/DashNavigation'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -30,11 +25,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '../../components/ui/dropdown-menu'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import { redirect } from 'next/navigation'
 import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs/components'
 import { unstable_noStore as noStore } from 'next/cache'
+
+export const metadata: Metadata = {
+  title: 'Zuma-Shop',
+  description: 'Get Your modern age Shop',
+}
 
 export default async function DashboardLayout({
   children,

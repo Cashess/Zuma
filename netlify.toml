@@ -1,10 +1,10 @@
 [build]
   command = "prisma migrate deploy && prisma generate && next build"
-
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-prisma"
 
 [build.environment]
   NODE_ENV = "production"
-  NEXT_PUBLIC_API_URL = "https://zumashop.netlify.app"
+  DATABASE_URL = "your_database_url"

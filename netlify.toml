@@ -2,9 +2,6 @@
   command = "prisma migrate deploy && prisma generate && next build"
   publish = ".next"
 
-[[plugins]]
-  package = "@netlify/plugin-prisma"
-
 [build.environment]
-  NODE_ENV = "production"
-  DATABASE_URL = "your_database_url"
+  DATABASE_URL = "postgresql://Zuma-base-Url_owner:j51HxqgziFAw@ep-cold-scene-a168x3t6.ap-southeast-1.aws.neon.tech/Zuma-base-Url?sslmode=require"
+  PRISMA_CLIENT_ENGINE_TYPE = "binary"

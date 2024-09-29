@@ -6,14 +6,22 @@ export async function GET() {
   const { getUser } = getKindeServerSession()
   const user = await getUser()
 
-  if (!user || user.email === null || !user.id) {
-    throw new Error('Something aint right...')
+  // Check if the user object is valid
+  if (!user || !user.email || !user.id) {
+    return NextResponse.json(
+      { message: 'User authentication failed.' },
+      { status: 401 }
+    )
   }
+
+  // Fetch user from database or create a new one if not found
   let databaseUser = await prisma.user.findUnique({
     where: {
       id: user.id,
     },
   })
+
+  // If user does not exist in the database, create it
   if (!databaseUser) {
     databaseUser = await prisma.user.create({
       data: {
@@ -26,5 +34,9 @@ export async function GET() {
       },
     })
   }
-  return NextResponse.redirect('http://localhost:3000/')
+
+  // Redirect the user
+  return NextResponse.redirect(
+    process.env.NEXT_PUBLIC_HOME_URL || 'http://localhost:3000/'
+  )
 }

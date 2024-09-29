@@ -1,12 +1,12 @@
-import { addItem } from '@/app/actions'
-import { FeaturedProducts } from '@/app/components/storefront/FeaturedProducts'
-import { ImageSlider } from '@/app/components/storefront/ImageSlider'
-import prisma from '@/lib/database'
+import { addItem } from '../../../actions'
+import { FeaturedProducts } from '../../../components/storefront/FeaturedProducts'
+import { ImageSlider } from '../../../components/storefront/ImageSlider'
+import prisma from '../../../../lib/database'
 
 import { StarIcon } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { unstable_noStore as noStore } from 'next/cache'
-import { ShoppingBagButton } from '@/app/components/SubmitButton'
+import { ShoppingBagButton } from '../../../components/SubmitButton'
 
 async function getData(productId: string) {
   const data = await prisma.product.findUnique({

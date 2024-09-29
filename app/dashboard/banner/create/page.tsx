@@ -12,9 +12,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+} from '../../../../components/ui/card'
+import { Input } from '../../../../components/ui/input'
+import { Label } from '../../../../components/ui/label'
 import { useForm } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
 import { ChevronLeft } from 'lucide-react'

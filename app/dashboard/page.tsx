@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '../../components/ui/card'
 import { DashboardStats } from '../components/dashboard/DashboardStat'
 import { RecentSales } from '../components/dashboard/RecentSales'
 import { Chart } from '../components/dashboard/Charts'

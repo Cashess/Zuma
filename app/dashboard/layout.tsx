@@ -15,8 +15,8 @@ import '../globals.css'
 
 import { ReactNode } from 'react'
 import { DashNavigation } from '../components/dashboard/DashNavigation'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '../../components/ui/sheet'
+import { Button } from '../../components/ui/button'
 import { CircleUser, MenuIcon } from 'lucide-react'
 import {
   DropdownMenu,

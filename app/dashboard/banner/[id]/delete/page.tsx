@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '../../../../../components/ui/card'
 import Link from 'next/link'
 
 export default function DeleteBannerRoute({

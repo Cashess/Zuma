@@ -1,11 +1,11 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '../../../components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '../../../components/ui/card'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '../../../components/ui/dropdown-menu'
 import {
   Table,
   TableBody,
@@ -21,8 +21,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table'
-import prisma from '@/lib/database'
+} from '../../../components/ui/table'
+import prisma from '../../../lib/database'
 import { MoreHorizontalIcon, PlusCircle } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'

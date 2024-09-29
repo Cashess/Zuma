@@ -1,8 +1,8 @@
 'use client'
-import { createZumaProduct } from '@/app/actions'
+import { createZumaProduct } from '../../../actions'
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { Button } from '@/components/ui/button'
+import { Button } from '../../../../components/ui/button'
 import {
   Card,
   CardContent,
@@ -11,8 +11,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { Input } from '../../../../components/ui/input'
+import { Label } from '../../../../components/ui/label'
 import {
   Select,
   SelectContent,
@@ -20,19 +20,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Switch } from '@/components/ui/switch'
-import { Textarea } from '@/components/ui/textarea'
-import { UploadDropzone } from '@/lib/uploadthing'
+import { Switch } from '../../../../components/ui/switch'
+import { Textarea } from '../../../../components/ui/textarea'
+import { UploadDropzone } from '../../../../lib/uploadthing'
 import { ChevronLeft, XCircleIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useFormState } from 'react-dom'
 import { useForm } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
-import { productSchema } from '@/lib/validations'
+import { productSchema } from '../../../../lib/validations'
 import { useState } from 'react'
 import Image from 'next/image'
-import { categories } from '@/lib/categories'
-import { SubmitButton } from '@/app/components/SubmitButton'
+import { categories } from '../../../../lib/categories'
+import { SubmitButton } from '../../../components/SubmitButton'
 
 export default function CreateProductPage() {
   const [images, setImages] = useState<string[]>([])

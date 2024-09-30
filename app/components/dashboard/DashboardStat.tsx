@@ -52,7 +52,7 @@ export async function DashboardStats() {
           <p className="text-2xl font-bold">
             ${new Intl.NumberFormat('en-US').format(totalAmount / 100)}
           </p>
-          <p className="text-xs text-muted-foreground">Based on 100 Charges</p>
+          <p className="text-xs text-muted-foreground">Based on Zuma 100 Charges</p>
         </CardContent>
       </Card>
       <Card>

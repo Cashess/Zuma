@@ -27,7 +27,6 @@ export async function Navbar() {
         <Link href="/">
           <h1 className="text-black font-bold text-xl lg:text-3xl">
             <span className="text-primary flex">
-              Shop
               <Image src={zuma} alt="zuma-logo" width={100} height={100} />{' '}
             </span>
           </h1>

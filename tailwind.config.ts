@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss'
-import { withUt } from 'uploadthing/tw'
+import type { Config } from 'tailwindcss';
+import { withUt } from 'uploadthing/tw';
 
 const config: Config = {
   darkMode: ['class'],
@@ -57,9 +57,20 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      // Add custom media queries here
+      screens: {
+        'xs': '480px',     // Extra small devices
+        'sm': '640px',     // Small devices (Default Tailwind)
+        'md': '768px',     // Medium devices (Default Tailwind)
+        'lg': '1024px',    // Large devices (Default Tailwind)
+        'xl': '1280px',    // Extra large devices (Default Tailwind)
+        '2xl': '1536px',   // Double extra large (Default Tailwind)
+        '3xl': '1920px',   // Custom breakpoint for large screens
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require('tailwindcss-animate')],
-}
-export default withUt(config)
+};
+
+export default withUt(config);

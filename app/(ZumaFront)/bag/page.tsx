@@ -85,6 +85,11 @@ export default async function BagRoute() {
             <form action={checkOutPage}>
               <ChceckoutButton />
             </form>
+            <Link href={`/bag/${user.id}/purchase/${user.id}?cartId=cart-${user.id}`}>
+            <button className="w-full  text-black p-3 rounded-md mt-6">
+              Proceed to Checkout
+            </button>
+          </Link>
           </div>
         </div>
       )}

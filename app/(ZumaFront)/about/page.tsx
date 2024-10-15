@@ -14,7 +14,7 @@ const AboutUs: React.FC = () => {
       <ul style={styles.list}>
         <li><strong>No More Waiting:</strong> All products are available locally, cutting down the typical delays of international shipments.</li>
         <li><strong>Customer-Centric Approach:</strong> Our focus is on delivering excellent customer service and ensuring your satisfaction with every purchase.</li>
-        <li><strong>Trusted Quality:</strong> We carefully vet our suppliers and products to ensure you're getting the best for your money.</li>
+        <li><strong>Trusted Quality:</strong> We carefully vet our suppliers and products to ensure you&apos;re getting the best for your money.</li>
       </ul>
       <p style={styles.paragraph}>
         At Zuma Store, we believe in empowering local communities through seamless access to global goods. We invite you to explore our offerings and experience the convenience of stress-free, local shopping. Thank you for choosing Zuma Store—we look forward to serving you!
@@ -34,7 +34,7 @@ const styles = {
   heading: {
     fontSize: '2em',
     color: '#B89E97',
-    textAlign: 'center' as const,  // TypeScript requires a cast here because 'textAlign' can have more than one possible type
+    textAlign: 'center' as const,
     marginBottom: '20px',
   },
   subHeading: {

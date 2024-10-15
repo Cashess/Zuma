@@ -281,11 +281,11 @@ export async function checkOutPage() {
       success_url:
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000/payment/success'
-          : 'https://Zuma-Shop.netlify.app/payment/success',
+          : 'https://zuma-shop.com/payment/success',
       cancel_url:
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000/payment/cancel'
-          : 'https://Zuma-Shop.netlify.app/payment/cancel',
+          : 'https://zuma-shop.com/payment/cancel',
       metadata: {
         userId: user.id,
       },

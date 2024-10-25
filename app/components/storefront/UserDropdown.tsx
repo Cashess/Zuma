@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import {
   Avatar,
   AvatarFallback,
@@ -39,6 +40,11 @@ export function UserDropdown({ email, name, userImage }: iAppProps) {
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <LogoutLink>Log out</LogoutLink>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+        <Link href={"/profile"}>
+        profile
+        </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

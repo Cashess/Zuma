@@ -11,30 +11,42 @@ import {
   CardTitle,
 } from '../../../components/ui/card'
 
-async function getData() {
-  const data = await prisma.order.findMany({
-    select: {
-      amount: true,
-      id: true,
-      User: {
-        select: {
-          firstName: true,
-          profileImage: true,
-          email: true,
+async function getData() { 
+  try {
+    const data = await prisma.order.findMany({
+      select: {
+        amount: true,
+        id: true,
+        user: {
+          select: {
+            firstName: true,
+            profileImage: true,
+            email: true,
+            
+          },
         },
+        status: true,
+        createdAt: true,
       },
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-    take: 7,
-  })
-
-  return data
+      orderBy: {
+        createdAt: 'desc',
+      },
+      take: 7,
+    });
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return []; // Return an empty array or handle as needed
+  }
 }
 
+
+
 export async function RecentSales() {
-  const data = await getData()
+  const data = await getData();
+  if (!data.length) {
+    return <p>No recent sales found.</p>; // Handle no data state
+  }
   return (
     <Card>
       <CardHeader>
@@ -44,15 +56,15 @@ export async function RecentSales() {
         {data.map((item) => (
           <div className="flex items-center gap-4" key={item.id}>
             <Avatar className="hidden sm:flex h-9 w-9">
-              <AvatarImage src={item.User?.profileImage} alt="Avatar Image" />
+              <AvatarImage src={item.user?.profileImage} alt="Avatar Image" />
               <AvatarFallback>
-                {item.User?.firstName.slice(0, 3)}
+                {item.user?.firstName.slice(0, 3)}
               </AvatarFallback>
             </Avatar>
             <div className="grid gap-1">
-              <p className="text-sm font-medium">{item.User?.firstName}</p>
+              <p className="text-sm font-medium">{item.user?.firstName}</p>
               <p className="text-sm text-muted-foreground">
-                {item.User?.email}
+                {item.user?.email}
               </p>
             </div>
             <p className="ml-auto font-medium">
@@ -62,5 +74,5 @@ export async function RecentSales() {
         ))}
       </CardContent>
     </Card>
-  )
+  );
 }

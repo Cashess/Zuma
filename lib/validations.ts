@@ -14,3 +14,16 @@ export const bannerSchema = z.object({
   title: z.string(),
   imageString: z.string(),
 })
+
+
+export const shippingAddressSchema = z.object({
+  id: z.string().uuid('Invalid ID format'), // Ensure the ID is a valid UUID
+  line1: z.string().min(3, 'Address line 1 must be at least 3 characters'),
+  line2: z.string().optional(), // Optional second line
+  city: z.string().min(3, 'City must be at least 3 characters'),
+  state: z.string().min(2, 'State must be at least 2 characters'), // Minimum length for state
+  postal_code: z.string().min(3, 'Postal code must be at least 3 characters'),
+  country: z.string().min(3, 'Country must be at least 3 characters'),
+  userId: z.string().uuid('Invalid User ID format'), // Ensure the userId is a valid UUID
+ 
+});

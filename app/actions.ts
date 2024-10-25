@@ -10,6 +10,7 @@ import { Cart } from '../lib/interface'
 import { revalidatePath } from 'next/cache'
 import { stripe } from '../lib/stripe'
 import Stripe from 'stripe'
+import { ShippingAddress } from '../lib/types'
 
 export async function createZumaProduct(
   prevState: unknown,
@@ -292,5 +293,35 @@ export async function checkOutPage() {
     })
 
     return redirect(session.url as string)
+  }
+}
+
+
+export async function saveShippingAddress(values: ShippingAddress) {
+  try {
+    // Create the shipping address in the database
+    await prisma.shippingAddress.create({
+      data: {
+        line1: values.line1,
+        line2: values.line2 || null, // Optional line2
+        city: values.city,
+        state: values.state,
+        postal_code: values.postal_code,
+        country: values.country,
+        userId: values.userId,
+      },
+    });
+
+    // Revalidate the profile path if needed
+    revalidatePath("/profile");
+
+    // Redirect to the profile page after successful creation
+    return redirect("/profile");
+  } catch (error) {
+    // Log the error or handle it as needed
+    console.error("Error saving shipping address:", error);
+
+    // Optionally, throw an error to handle it in the calling function
+    throw new Error("Failed to save shipping address.");
   }
 }

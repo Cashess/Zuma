@@ -1,10 +1,11 @@
+import prisma from '@/lib/database';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '../../../components/ui/card'
+} from '../../../components/ui/card';
 import {
   Table,
   TableBody,
@@ -12,36 +13,56 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '../../../components/ui/table'
-import prisma from '../../../lib/database'
-import { unstable_noStore as noStore } from 'next/cache'
+} from '../../../components/ui/table';
+import { unstable_noStore } from 'next/cache';
 
-async function getData() {
+async function getOrders() {
   const data = await prisma.order.findMany({
     select: {
+      id: true,
+      status: true,
       amount: true,
       createdAt: true,
-      status: true,
-      id: true,
-      User: {
+      user: { // Fetch related user details
         select: {
+          id: true,
           firstName: true,
           email: true,
           profileImage: true,
         },
       },
+      shippingAddress: { // Fetch related shipping address details
+        select: {
+          line1: true,
+          line2: true,
+          city: true,
+          state: true,
+          postal_code: true,
+          country: true,
+        },
+      },
+      billingAddress: { // Fetch related billing address details
+        select: {
+          line1: true,
+          line2: true,
+          city: true,
+          state: true,
+          postal_code: true,
+          country: true,
+        },
+      },
     },
     orderBy: {
-      createdAt: 'desc',
+      createdAt: 'desc', // Order results by creation date in descending order
     },
-  })
+  });
 
-  return data
+  return data;
 }
 
 export default async function PurchasePage() {
-  noStore()
-  const data = await getData()
+  unstable_noStore();
+  const data = await getOrders();
   return (
     <Card>
       <CardHeader>
@@ -63,9 +84,9 @@ export default async function PurchasePage() {
             {data.map((item) => (
               <TableRow key={item.id}>
                 <TableCell>
-                  <p className="font-medium">{item.User?.firstName}</p>
+                  <p className="font-medium">{item.user?.firstName}</p>
                   <p className="hidden md:flex text-sm text-muted-foreground">
-                    {item.User?.email}
+                    {item.user?.email}
                   </p>
                 </TableCell>
                 <TableCell>Order</TableCell>
@@ -82,5 +103,7 @@ export default async function PurchasePage() {
         </Table>
       </CardContent>
     </Card>
-  )
+  );
 }
+
+
